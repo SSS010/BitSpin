@@ -29,12 +29,11 @@ SPIN_SPEED_MIN: Final[float] = 0.32
 FLASH_SECONDS: Final[float] = 0.85
 BLINK_PERIOD: Final[float] = 0.12
 
-# Барабан: повторяющаяся лента для циклической прокрутки.
 REEL_STRIP: Final[list[str]] = list(SYMBOL_ORDER) * 16
 
 
 def lock_scroll(scroll: int, target: str, strip: list[str]) -> int:
-    """Минимальный неотрицательный шаг вперёд до совпадения символа на линии."""
+
     length = len(strip)
     for step in range(length):
         s = scroll + step
@@ -44,7 +43,7 @@ def lock_scroll(scroll: int, target: str, strip: list[str]) -> int:
 
 
 def visible_rows_for_scrolls(scroll: tuple[int, int, int]) -> tuple[tuple[str, str, str], ...]:
-    """Три строки (верх, линия, низ) для трёх барабанов."""
+   
     length = len(REEL_STRIP)
     tops = []
     mids = []
@@ -160,7 +159,7 @@ def run_game() -> None:
                 flash_win = None
 
     def border_and_blink(now: float) -> tuple[str, bool]:
-        """Цвет рамки и фаза мигания текста выигрыша."""
+        
         if flash_win is None or now > flash_until:
             return WIN_BORDER_GOLD, True
         toggle = int(now / BLINK_PERIOD) % 2 == 0

@@ -16,7 +16,7 @@ SYMBOL_MULTIPLIERS: Final[dict[str, int]] = {
     "🍋": 5,
     "🍇": 10,
     "💎": 50,
-    "7️⃣": 100,
+    "7️": 100,
 }
 
 # Order used on physical reel strips and weighted picks.
@@ -89,7 +89,7 @@ class SlotMachine:
         if a == b == c:
             mult = SYMBOL_MULTIPLIERS[a]
             win = self.bet * mult
-            jackpot = a == "7️⃣"
+            jackpot = a == "7️"
         return SpinOutcome(reels=reels, win_amount=win, is_jackpot_line=jackpot)
 
     def apply_spin_cost(self) -> None:

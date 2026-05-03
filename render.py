@@ -48,14 +48,14 @@ def build_reels_table(
         box=box.ROUNDED,
         border_style="bright_blue",
         padding=(0, 1),
-        title="[bold cyan]Барабаны[/bold cyan]",
+        title="[bold cyan]Drums[/bold cyan]",
         title_align="center",
     )
 
 
 def build_status_line(machine: SlotMachine) -> Text:
     return Text(
-        f"[Баланс: {machine.balance}] | [Ставка: {machine.bet}] | [Последний выигрыш: {machine.last_win}]",
+        f"[Balance: {machine.balance}] | [bid: {machine.bet}] | [Last win: {machine.last_win}]",
         style="white",
         justify="center",
     )
@@ -63,7 +63,7 @@ def build_status_line(machine: SlotMachine) -> Text:
 
 def build_help_line() -> Text:
     return Text(
-        "Enter — крутить   ·   Q — выйти",
+        "Enter — twist   ·   Q — get out",
         style="dim italic",
         justify="center",
     )
@@ -72,7 +72,7 @@ def build_help_line() -> Text:
 def build_win_line(amount: int, symbol: str, *, bright: bool) -> Text:
     style = "bold green" if bright else "dim green"
     return Text(
-        f"ВЫИГРЫШ: +{amount}  ({symbol} × линия)",
+        f"WIN: +{amount}  ({symbol} × line)",
         style=style,
         justify="center",
     )
