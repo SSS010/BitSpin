@@ -1,6 +1,7 @@
 # BitSpin CLI
 
 **BitSpin** is a terminal slot machine built with Python and [Rich](https://github.com/Textualize/rich). It renders a stylized three-reel machine inside a `Panel`, animates spins with `Live`, saves your balance to JSON, and uses non-blocking keyboard input via `pynput`.
+<img width="1111" height="579" alt="Снимок экрана 2026-05-03 115204" src="https://github.com/user-attachments/assets/2a7ab176-1e86-49ae-9108-39af1489159f" />
 
 ## Run & install
 
